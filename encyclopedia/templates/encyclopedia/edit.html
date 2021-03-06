@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+   <h1>Edit this Page</h1>
+   <p style="width: 750px;">To edit this page, update the content below in markdown format. Read through 
+    <a href="https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax">GitHub’s Markdown guide</a> 
+    to get an understanding for how Markdown’s syntax works. </p>
+    <form action={% url "edit" title%} method="post">
+        {% csrf_token %}
+        <h4> Title: {{title}} </h4>
+        <br>
+        Content: 
+        <br>
+        {{form.content}}
+        <br>
+        <input type="submit"> 
+    <form>
+
+{% endblock %}
+

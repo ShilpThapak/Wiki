@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <p> Do you mean something else? Try these: </p>
+    <ul>
+        <li><a href="{% url 'title' entry %}">{{ entry }}</a></li>
+        
+    </ul>
+
+{% endblock %}
